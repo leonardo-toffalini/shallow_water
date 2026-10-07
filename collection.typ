@@ -116,6 +116,26 @@ $
 with $0 < h_R < h_L$. That is, the only thing that changed compared to the dry
 dam break case is that on the right side of the dam there is water.
 
+Let $c_L = sqrt(g h_L)$ and $c_R = sqrt(g h_R)$ and let $u_m = 2 (c_L - c_m)$
+and $c_m = sqrt(g h_m)$, where $h_m$ is the solution to
+$
+  u_m = 2(c_L - c_m) = (h_m - h_R) sqrt((g (h_m + h_R))/(2 h_m h_R)).
+$
+
+It can be shown that such an $h_m$ exists.
+
+Introduce the notations $xi = x\/t$ and $s = (h_m u_m)/(h_m - h_R)$. With these
+notations the solution is of the form
+$
+  (h, u) = cases(
+    (h_L, 0) & "if" xi < - c_L,
+    (frac(1, 9 g) (2 c_L - xi)^2, frac(2, 3) (c_L + xi))
+      & "if" - c_L <= xi <= u_m - c_m,
+    (h_m, u_m) & "if" u_m - c_m <= xi < s,
+    (h_R, 0) & "if" xi > s.
+  )
+$
+
 == Simple wave
 A simple wave is a wave for which all but one Riemann invariants are constnat.
 
